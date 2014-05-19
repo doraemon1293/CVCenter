@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15-Dec-2012 09:42:31 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="cvcenter.entity.Users" table="users" catalog="cvcenter">
+        <id name="userId" type="int">
+            <column name="USER_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="username" type="string">
+            <column name="USERNAME" length="45" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="45" not-null="true" />
+        </property>
+        <property name="enabled" type="boolean">
+            <column name="ENABLED" not-null="true" />
+        </property>
+        <set name="students" inverse="true" lazy="false">
+            <key>
+                <column name="USER_ID" not-null="true" />
+            </key>
+            <one-to-many class="cvcenter.entity.Student" />
+        </set>
+        <set name="userRoleses" inverse="true" lazy="false">
+            <key>
+                <column name="USER_ID" not-null="true" />
+            </key>
+            <one-to-many class="cvcenter.entity.UserRoles" />
+        </set>
+        <set name="companies" inverse="true" lazy="false">
+            <key>
+                <column name="USER_ID" not-null="true" />
+            </key>
+            <one-to-many class="cvcenter.entity.Company" />
+        </set>
+    </class>
+</hibernate-mapping>

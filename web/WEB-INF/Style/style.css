@@ -1,0 +1,105 @@
+BODY {
+  FONT-SIZE: 9pt;
+	FONT-COLOR: #000000;
+	LINE-HEIGHT: 11pt;
+	FONT-FAMILY:  "Arial", "Helvetica", "sans-serif";
+  COLOR: #000000;
+  scrollbar-base-color:#C6D7CE;
+  scrollbar-arrow-color:#FFFFFF;	
+}
+TD {
+	FONT-SIZE: 9pt;
+	COLOR: #000000;
+	LINE-HEIGHT: 11pt;
+	FONT-FAMILY: "Arial", "Helvetica", "sans-serif";
+	word-break: break-all;
+}
+A:visited {
+	COLOR: #000000;
+	TEXT-DECORATION: none;
+}
+A:active {
+	COLOR: #000000;
+	TEXT-DECORATION: underline;
+}
+A:link {
+	COLOR: #000000;
+	TEXT-DECORATION: none;
+}
+A:hover {
+	COLOR: #000000;
+	TEXT-DECORATION: underline;
+}
+.text-login
+{
+	FONT-SIZE: 0.7em; FONT-FAMILY: Tahoma,Verdana, Geneva, Arial, Helvetica, sans-serif
+}.inputlength120 {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #000000;
+	background-color: #FFFFFF;
+	word-spacing: .1em;
+	height: 20px;
+	width: 120px;
+	border: 1px solid #739684;
+}
+.logbutton {
+	font-family: "tahoma", "arial";
+	font-size: 12px;
+	color: #000000;
+	background-color: #FFFFFF;
+	height: 20px;
+	width: 60px;
+	border: 1px solid #739684;
+}
+.addinput {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #000000;
+	background-color: #FFFFFF;
+	height: 20px;
+	width: 200px;
+	border: 1px solid #000000;
+	word-spacing: 0.1em;
+
+}
+.addlist {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #000000;
+	background-color: #FFFFFF;
+	word-spacing: 0.1em;
+	height: auto;
+	width: 150px;
+	border: 1px solid #000000;
+}
+.addtextarea {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #000000;
+	background-color: #FFFFFF;
+	word-spacing: 0.1em;
+	height: 100px;
+	width: 350px;
+	border: 1px solid #000000;
+}
+.addinputtime {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #000000;
+	background-color: #FFFFFF;
+	word-spacing: 0.1em;
+	height: 20px;
+	width: 80px;
+	border: 1px solid #000000;
+}
+.sendretextarea {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #000000;
+	background-color: #FFFFFF;
+	word-spacing: 0.1em;
+	height: 240px;
+	width: 600px;
+	border: 1px solid #000000;
+}

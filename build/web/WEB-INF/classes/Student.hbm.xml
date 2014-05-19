@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15-Dec-2012 09:42:31 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="cvcenter.entity.Student" table="student" catalog="cvcenter">
+        <id name="studentId" type="java.lang.Integer">
+            <column name="STUDENT_ID" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="users" class="cvcenter.entity.Users" fetch="select" lazy="false">
+            <column name="USER_ID" not-null="true" />
+        </many-to-one>
+        <property name="firstName" type="string">
+            <column name="FIRST_NAME" length="45" not-null="true" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="LAST_NAME" length="45" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="45" not-null="true" />
+        </property>
+        <property name="tel" type="string">
+            <column name="TEL" length="15" />
+        </property>
+        <property name="initial" type="string">
+            <column name="INITIAL" length="10" />
+        </property>
+        <set name="cvs" inverse="true" lazy="false">
+            <key>
+                <column name="STUDENT_ID" not-null="true" />
+            </key>
+            <one-to-many class="cvcenter.entity.Cv" />
+        </set>
+    </class>
+</hibernate-mapping>

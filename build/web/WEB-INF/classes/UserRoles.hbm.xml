@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15-Dec-2012 09:42:31 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="cvcenter.entity.UserRoles" table="user_roles" catalog="cvcenter">
+        <id name="userRoleId" type="int">
+            <column name="USER_ROLE_ID" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="users" class="cvcenter.entity.Users" fetch="select">
+            <column name="USER_ID" not-null="true" />
+        </many-to-one>
+        <property name="authority" type="string">
+            <column name="AUTHORITY" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

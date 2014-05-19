@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15-Dec-2012 09:42:31 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="cvcenter.entity.Cv" table="cv" catalog="cvcenter">
+        <id name="cvId" type="int">
+            <column name="CV_ID" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="student" class="cvcenter.entity.Student" fetch="select">
+            <column name="STUDENT_ID" not-null="true" />
+        </many-to-one>
+        <property name="format" type="string">
+            <column name="FORMAT" length="45" />
+        </property>
+        <property name="fileurl" type="string">
+            <column name="FILEURL" length="100" not-null="true" />
+        </property>
+        <property name="filename" type="string">
+            <column name="FILENAME" length="45" />
+        </property>
+        <property name="jobCat" type="string">
+            <column name="JOB_CAT" length="200" />
+        </property>
+        <set name="jobs" table="job_has_cv" 
+        	inverse="false" lazy="false" fetch="select" cascade="all" >
+            <key>
+                <column name="CV_ID" not-null="true" />
+            </key>
+            <many-to-many entity-name="cvcenter.entity.Job">
+                <column name="JOB_ID" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15-Dec-2012 09:42:31 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="cvcenter.entity.Job" table="job" catalog="cvcenter">
+        <id name="jobId" type="int">
+            <column name="JOB_ID" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="company" class="cvcenter.entity.Company" lazy="false" fetch="select">
+            <column name="COMPANY_ID" not-null="true" />
+        </many-to-one>
+        <property name="jobCat" type="string">
+            <column name="JOB_CAT" length="200" not-null="true" />
+        </property>
+        <property name="title" type="string">
+            <column name="TITLE" length="100" not-null="true" />
+        </property>
+        <property name="deadline" type="date">
+            <column name="DEADLINE" length="10" />
+        </property>
+        <property name="texturl" type="string">
+            <column name="TEXTURL" length="100" />
+        </property>
+        <set name="cvs" table="job_has_cv" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="JOB_ID" not-null="true" />
+            </key>
+            <many-to-many entity-name="cvcenter.entity.Cv" >
+                <column name="CV_ID" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
